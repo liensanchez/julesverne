@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/HomeView/Home.vue'
+import Styles from '../views/StylesView/Styles.vue'
 
 const routes = [
   {
@@ -8,8 +9,9 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'about',
+    path: '/styles-guide',
+    name: 'Styles Guide',
+    component: Styles
   }
 ]
 

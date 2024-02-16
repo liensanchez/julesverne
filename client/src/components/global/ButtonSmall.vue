@@ -24,7 +24,7 @@ export default {
   display: flex;
   align-items: center;
   cursor: pointer;
-  padding: 20px 50px;
+  padding: 20px ;
   border: solid 1px black;
   font-family: "Cardo", serif;
   font-size: 20px;
