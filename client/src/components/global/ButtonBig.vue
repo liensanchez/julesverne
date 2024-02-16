@@ -20,13 +20,15 @@ export default {
 </template>
 
 <style lang="scss">
-  .button-big {
-    cursor: pointer;
-    padding: 20px 95px;
-    border: solid 1px black;
-    font-family: 'Cardo', serif;
-    font-size: 20px;
-    max-width: 300px;
-    color: #1B3764;
-  }
+.button-big {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px 95px;
+  border: solid 1px black;
+  font-family: "Cardo", serif;
+  font-size: 20px;
+  max-width: 300px;
+  color: #1b3764;
+}
 </style>

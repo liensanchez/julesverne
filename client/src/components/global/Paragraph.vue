@@ -11,7 +11,7 @@ export default {
 
 <template>
   <p class="paragraph">
-    {{ text }}
+    {{ this.text }}
   </p>
 </template>
 
@@ -19,6 +19,7 @@ export default {
 .paragraph {
   font-family: "Inter", sans-serif;
   font-size: 19px;
-  color: #000000;
+  color: #969AA0;
+  font-weight: 400px;
 }
 </style>
