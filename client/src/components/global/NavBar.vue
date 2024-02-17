@@ -39,7 +39,7 @@ export default {
             />
           </svg>
 
-          <h1 class="navbar-title">Pages</h1>
+          <h1 class="navbar-title">Julio Verne</h1>
         </div>
 
         <div class="navbar-social">
@@ -140,7 +140,7 @@ export default {
     justify-content: space-between;
 
     .navbar-left {
-      width: 305px;
+      width: 350px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -148,8 +148,8 @@ export default {
       .navbar-logo {
         cursor: pointer;
         display: flex;
-        justify-content: space-between;
-        width: 115px;
+        align-items: center;
+        gap: 5px;
 
         .navbar-title {
           font-family: "Inter", sans-serif;
