@@ -5,12 +5,14 @@ import Colors from "@/components/StylesView/Colors.vue";
 import Paragraph from "@/components/global/Paragraph.vue";
 import ButtonSmall from "@/components/global/ButtonSmall.vue";
 import ButtonBig from "@/components/global/ButtonBig.vue";
+import Title from "@/components/global/Titles.vue";
 import Lists from "@/components/global/Lists.vue";
 import BlockQuote from "@/components/global/BlockQuote.vue";
 import DoubleInput from "@/components/Form/DoubleInput.vue";
 import SingleInput from "@/components/Form/SingleInput.vue";
 import TextInput from "@/components/Form/TextInput.vue";
 import SubmitButton from "@/components/Form/SubmitButton.vue";
+import Footer from "@/components/global/Footer.vue";
 
 export default {
   data() {
@@ -23,6 +25,12 @@ export default {
         borderColor: "#FFCA42",
         backgroundColor: "#FFCA42",
       },
+      titleOne: "Heading H1 Title",
+      titleTwo: "Heading H2 Title",
+      titleThree: "Heading H3 Title",
+      titleFour: "Heading H4 Title",
+      titleFive: "Heading H5 Title",
+      titleSix: "Heading H6 Title",
       heroTitle: "Style Guide",
       heroText:
         "There are many variations of passages of Lorem Ipsum available,  have suffered alteration in some form.",
@@ -45,6 +53,7 @@ export default {
     Paragraph,
     ButtonSmall,
     ButtonBig,
+    Title,
     Colors,
     Lists,
     BlockQuote,
@@ -52,6 +61,7 @@ export default {
     SingleInput,
     TextInput,
     SubmitButton,
+    Footer,
   },
 };
 </script>
@@ -82,6 +92,18 @@ export default {
             </div>
           </div>
 
+          <div>
+            <p class="demo-title">Title</p>
+            <Title
+              :titleOne="titleOne"
+              :titleTwo="titleTwo"
+              :titleThree="titleThree"
+              :titleFour="titleFour"
+              :titleFive="titleFive"
+              :titleSix="titleSix"
+            />
+          </div>
+
           <div class="list-container">
             <p class="demo-title">List</p>
             <Lists :ordererList="ordererList" :unordererList="unordererList" />
@@ -99,11 +121,10 @@ export default {
             <TextInput />
             <SubmitButton />
           </div>
-
-          
         </div>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 
