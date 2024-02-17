@@ -7,9 +7,10 @@ import ButtonSmall from "@/components/global/ButtonSmall.vue";
 import ButtonBig from "@/components/global/ButtonBig.vue";
 import Lists from "@/components/global/Lists.vue";
 import BlockQuote from "@/components/global/BlockQuote.vue";
-import DoubleInput from "@/components/Form/DoubleInput.vue"
-import SingleInput from "@/components/Form/SingleInput.vue"
-import TextInput from "@/components/Form/TextInput.vue"
+import DoubleInput from "@/components/Form/DoubleInput.vue";
+import SingleInput from "@/components/Form/SingleInput.vue";
+import TextInput from "@/components/Form/TextInput.vue";
+import SubmitButton from "@/components/Form/SubmitButton.vue";
 
 export default {
   data() {
@@ -49,7 +50,8 @@ export default {
     BlockQuote,
     DoubleInput,
     SingleInput,
-    TextInput
+    TextInput,
+    SubmitButton,
   },
 };
 </script>
@@ -95,7 +97,10 @@ export default {
             <DoubleInput />
             <SingleInput />
             <TextInput />
+            <SubmitButton />
           </div>
+
+          
         </div>
       </div>
     </div>

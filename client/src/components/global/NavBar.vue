@@ -39,7 +39,7 @@ export default {
             />
           </svg>
 
-          <h1 class="navbar-title">Julio Verne</h1>
+          <h1 class="navbar-title">Jules Verne</h1>
         </div>
 
         <div class="navbar-social">
