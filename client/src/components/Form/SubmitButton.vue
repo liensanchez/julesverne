@@ -13,7 +13,7 @@ export default {};
   width: 100%;
 
   .submit-button {
-    background-color: #FFCA42;
+    background-color: #ffca42;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -24,6 +24,12 @@ export default {};
     font-family: "Cardo", serif;
     font-size: 20px;
     color: #1b3764;
+    transition: transform 0.5s ease;
+
+    &:hover {
+      text-decoration: underline;
+      transform: scale(1.1);
+    }
   }
 }
 </style>

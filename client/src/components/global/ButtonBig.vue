@@ -30,5 +30,11 @@ export default {
   font-size: 20px;
   max-width: 300px;
   color: #1b3764;
+  transition: transform 0.5s ease;
+
+  &:hover {
+    text-decoration: underline;
+    transform: scale(1.1);
+  }
 }
 </style>
