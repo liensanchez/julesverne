@@ -6,49 +6,53 @@ export default {
     titleThree: String,
     titleFour: String,
     titleFive: String,
-    titleSix: String
-  }
-}
+    titleSix: String,
+    style: {
+      type: Object,
+      default: () => ({}),
+    },
+  },
+};
 </script>
 
 <template>
   <div>
-    <h1 class="title t-1">{{ this.titleOne }}</h1>
-    <h2 class="title t-2">{{ this.titleTwo }}</h2>
-    <h3 class="title t-3">{{ this.titleThree }}</h3>
-    <h4 class="title t-4">{{ this.titleFour }}</h4>
-    <h5 class="title t-5">{{ this.titleFive }}</h5>
-    <h6 class="title t-6">{{ this.titleSix }}</h6>
+    <h1 class="title t-1" :style="style">{{ this.titleOne }}</h1>
+    <h2 class="title t-2" :style="style">{{ this.titleTwo }}</h2>
+    <h3 class="title t-3" :style="style">{{ this.titleThree }}</h3>
+    <h4 class="title t-4" :style="style">{{ this.titleFour }}</h4>
+    <h5 class="title t-5" :style="style">{{ this.titleFive }}</h5>
+    <h6 class="title t-6" :style="style">{{ this.titleSix }}</h6>
   </div>
 </template>
 
 <style lang="scss">
-  .title {
-    font-family: "Cardo", serif;
-    color: #1b3764;
-  }
+.title {
+  font-family: "Cardo", serif;
+  color: #1b3764;
+}
 
-  .t-1 {
-    font-size: 65px;
-  }
+.t-1 {
+  font-size: 65px;
+}
 
-  .t-2 {
-    font-size: 55px;
-  }
+.t-2 {
+  font-size: 55px;
+}
 
-  .t-3 {
-    font-size: 45px;
-  }
+.t-3 {
+  font-size: 45px;
+}
 
-  .t-4 {
-    font-size: 32px;
-  }
+.t-4 {
+  font-size: 32px;
+}
 
-  .t-5 {
-    font-size: 24px;
-  }
+.t-5 {
+  font-size: 24px;
+}
 
-  .t-6 {
-    font-size: 22px;
-  }
+.t-6 {
+  font-size: 22px;
+}
 </style>

@@ -23,6 +23,7 @@ export default {
 .button-small {
   display: flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
   padding: 20px;
   border: solid 1px black;

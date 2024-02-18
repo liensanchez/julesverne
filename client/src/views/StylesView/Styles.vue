@@ -31,6 +31,9 @@ export default {
       titleFour: "Heading H4 Title",
       titleFive: "Heading H5 Title",
       titleSix: "Heading H6 Title",
+      titleColor: {
+        color: "#1B3764"
+      },
       heroTitle: "Style Guide",
       heroText:
         "There are many variations of passages of Lorem Ipsum available,  have suffered alteration in some form.",
@@ -101,6 +104,7 @@ export default {
               :titleFour="titleFour"
               :titleFive="titleFive"
               :titleSix="titleSix"
+              :style="titleColor"
             />
           </div>
 
