@@ -414,6 +414,10 @@
         font-size: 18px;
         color: #b4c7e7;
         text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
       span {
