@@ -3,12 +3,14 @@ import axios from "axios";
 import Titles from "../global/Titles.vue";
 import Paragraph from "../global/Paragraph.vue";
 import ButtonSmall from "@/components/global/ButtonSmall.vue";
+import PageCounter from "./PageCounter.vue";
 
 export default {
   components: {
     Titles,
     Paragraph,
     ButtonSmall,
+    PageCounter
   },
   data() {
     return {
@@ -23,9 +25,10 @@ export default {
         borderColor: "#FFCA42",
         backgroundColor: "#FFCA42",
       },
+      bookLength: "1500"
     };
   },
-  /*   methods: {
+  methods: {
     fetchData() {
       const apiUrl = "https://www.googleapis.com/books/v1/volumes";
       const query = "inauthor:julio+verne";
@@ -49,7 +52,7 @@ export default {
   },
   mounted() {
     this.fetchData();
-  }, */
+  }, 
 };
 </script>
 
@@ -61,6 +64,7 @@ export default {
           <Titles :titleOne="HeroTitle" :style="HeroTitleStyle" />
           <Paragraph :text="HeroText" />
           <ButtonSmall :buttonText="HeroButton" :style="HeroButtonStyle" />
+          <PageCounter :bookLength="bookLength" />
         </div>
 
         <img src="./Book.png" alt="" />
