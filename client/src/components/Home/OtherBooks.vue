@@ -37,14 +37,14 @@ export default {
 <template>
   <div class="otherbooks-container">
     <div class="custom-container">
-      <Titles :titleThree="titleComponent" :style="titleComponentColor" />
+      <Titles :titleThree="this.titleComponent" :style="this.titleComponentColor" />
 
       <div class="otherbooks-preview">
         <div class="otherbook-content">
           <img src="./Book.png" alt="" />
           <div class="otherbook-info">
-            <Titles :titleFour="titleBook" :style="titleBookColor" />
-            <Paragraph :text="textBook" />
+            <Titles :titleFour="this.titleBook" :style="this.titleBookColor" />
+            <Paragraph :text="this.textBook" />
             <div class="book-count">
               <span>
                 <svg
@@ -65,15 +65,15 @@ export default {
                 {{ this.bookLength }}
               </p>
             </div>
-            <ButtonSmall :buttonText="bookButton" :style="bookButtonStyles" />
+            <ButtonSmall :buttonText="this.bookButton" :style="this.bookButtonStyles" />
           </div>
         </div>
 
         <div class="otherbook-content">
           <img src="./Book.png" alt="" />
           <div class="otherbook-info">
-            <Titles :titleFour="titleBook" :style="titleBookColor" />
-            <Paragraph :text="textBook" />
+            <Titles :titleFour="this.titleBook" :style="this.titleBookColor" />
+            <Paragraph :text="this.textBook" />
             <div class="book-count">
               <span>
                 <svg
@@ -94,7 +94,7 @@ export default {
                 {{ this.bookLength }}
               </p>
             </div>
-            <ButtonSmall :buttonText="bookButton" :style="bookButtonStyles" />
+            <ButtonSmall :buttonText="this.bookButton" :style="this.bookButtonStyles" />
           </div>
         </div>
       </div>

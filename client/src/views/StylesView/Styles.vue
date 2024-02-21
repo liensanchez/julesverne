@@ -85,37 +85,37 @@ export default {
           <div class="buttons-container">
             <p class="demo-title">Buttons</p>
             <div class="buttons-demo">
-              <ButtonSmall :buttonText="'Button Text'" :style="buttonWhite" />
-              <ButtonSmall :buttonText="'Button Text'" :style="buttonYellow" />
+              <ButtonSmall :buttonText="'Button Text'" :style="this.buttonWhite" />
+              <ButtonSmall :buttonText="'Button Text'" :style="this.buttonYellow" />
             </div>
 
             <div class="buttons-demo">
-              <ButtonBig :buttonText="'Button Text'" :style="buttonWhite" />
-              <ButtonBig :buttonText="'Button Text'" :style="buttonYellow" />
+              <ButtonBig :buttonText="'Button Text'" :style="this.buttonWhite" />
+              <ButtonBig :buttonText="'Button Text'" :style="this.buttonYellow" />
             </div>
           </div>
 
           <div>
             <p class="demo-title">Title</p>
             <Title
-              :titleOne="titleOne"
-              :titleTwo="titleTwo"
-              :titleThree="titleThree"
-              :titleFour="titleFour"
-              :titleFive="titleFive"
-              :titleSix="titleSix"
-              :style="titleColor"
+              :titleOne="this.titleOne"
+              :titleTwo="this.titleTwo"
+              :titleThree="this.titleThree"
+              :titleFour="this.titleFour"
+              :titleFive="this.titleFive"
+              :titleSix="this.titleSix"
+              :style="this.titleColor"
             />
           </div>
 
           <div class="list-container">
             <p class="demo-title">List</p>
-            <Lists :ordererList="ordererList" :unordererList="unordererList" />
+            <Lists :ordererList="this.ordererList" :unordererList="this.unordererList" />
           </div>
 
           <div class="quote-container">
             <p class="demo-title">Block Quote</p>
-            <BlockQuote :textQuote="textQuote" />
+            <BlockQuote :textQuote="this.textQuote" />
           </div>
 
           <div class="form-container">
