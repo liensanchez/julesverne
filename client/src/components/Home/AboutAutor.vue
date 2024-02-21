@@ -32,7 +32,7 @@ export default {
     <div class="custom-container">
       <div class="about-content">
         <div class="about-image">
-          <img src="./Author.png" alt="" />
+          <img src="../../assets/jules-verne.jpg" alt="Jules Verne" />
         </div>
 
         <div class="about-info">
@@ -68,12 +68,16 @@ export default {
 
     .about-image {
       border: solid 10px #ffca42;
-      padding: 10px;
       margin-left: 50px;
+      max-width: 40%;
+      min-height: 500px;
+      padding-bottom: 20px;
 
       img {
-        margin-left: -50px;
-        margin-top: -50px;
+        width: 100%;
+        height: 100%;
+        margin-left: -20px;
+        margin-top: -20px;
       }
     }
 

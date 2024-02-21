@@ -120,6 +120,8 @@ export default {
       margin-top: 45px;
 
       img {
+        max-width: 60%;
+        height: auto;
         height: 420px;
       }
 

@@ -74,7 +74,7 @@ export default {
           </div>
 
           <div class="authorCharacteristics-image">
-            <img src="./person-reading.png" alt="" />
+            <img src="../../assets/person-reading.png" alt="" />
           </div>
         </div>
       </div>
@@ -97,22 +97,23 @@ export default {
     .characteristics {
       display: flex;
       justify-content: space-between;
+      align-items: center;
 
       .authorCharacteristics-cards {
-        max-width: 50%;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
+        max-width: 55%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
 
         .characteristic-card {
           display: flex;
           flex-direction: column;
           gap: 30px;
-          max-width: 40%;
           background-color: #f4f8ff;
-          padding: 30px 30px;
+          padding: 20px 20px;
           font-family: "Cardo", serif;
-          font-size: 20px;
+          color: #1b3764;
+          font-size: 25px;
 
           .card-number {
             background: #ffca42;
@@ -128,11 +129,19 @@ export default {
 
       .authorCharacteristics-image {
         border: solid 10px #ffca42;
-        padding: 10px;
+        margin-left: 50px;
+        max-width: 40%;
+        min-height: 500px;
+        max-height: 500px;
+        padding-bottom: 20px;
 
         img {
-          margin-left: -50px;
-          margin-top: -50px;
+          width: 100%;
+          height: 100%;
+          min-height: 500px;
+          max-height: 500px;
+          margin-left: -20px;
+          margin-top: -20px;
         }
       }
     }

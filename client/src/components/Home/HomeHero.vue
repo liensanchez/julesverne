@@ -103,6 +103,10 @@ export default {
     align-items: center;
     gap: 70px;
 
+    img {
+      max-width: 40%;
+    }
+
     .home-hero-info {
       display: flex;
       flex-direction: column;
