@@ -20,5 +20,9 @@ export default {
 .custom-container {
   width: 80%;
   max-width: 1920px;
+
+  @media(max-width: 1200px) {
+    width: 90%;
+  }
 }
 </style>
