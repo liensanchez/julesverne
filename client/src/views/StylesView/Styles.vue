@@ -136,6 +136,7 @@ export default {
 .body-styles {
   display: flex;
   justify-content: center;
+  margin: 150px 0;
 
   .demo-title {
     font-family: "Cardo", serif;
@@ -145,7 +146,6 @@ export default {
   }
 
   .content-styles {
-    margin-top: 120px;
     display: flex;
     flex-direction: column;
     gap: 100px;

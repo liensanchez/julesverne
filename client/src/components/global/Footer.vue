@@ -338,7 +338,6 @@
 
 <style lang="scss">
 .footer-container {
-  margin-top: 150px;
   background-color: #1b3764;
   display: flex;
   justify-content: center;

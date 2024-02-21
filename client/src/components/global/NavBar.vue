@@ -217,17 +217,24 @@ export default {
         width: 70px;
         display: flex;
         align-content: center;
+        position: relative;
+        z-index: 2;
 
         .dropdown-buttons {
-          margin-left: -70px;
+          margin-left: -75px;
           margin-top: 50px;
           display: flex;
           flex-direction: column;
           opacity: 0;
           transition: opacity 0.3s ease;
 
+          button {
+            background: #1b3764;
+            padding: 5px;
+          }
+
           &.visible {
-            opacity: 1; /* show the buttons when the 'visible' class is present */
+            opacity: 1;
           }
         }
       }
