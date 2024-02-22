@@ -26,11 +26,11 @@ export default {
   <div>
     <NavBar />
     <HomeHero />
-    <OtherBooks />
+<!--     <OtherBooks />
     <AboutAutor />
     <CallToAction />
     <AuthorsCharacteristics />
-    <Footer />
+    <Footer /> -->
   </div>
 </template>
 

@@ -61,8 +61,8 @@ export default {
         <div class="home-hero-info">
           <Titles :titleOne="HeroTitle" :style="HeroTitleStyle" />
           <Paragraph :text="HeroText" />
+          <img src="./Book.png" alt="" class="mobile-book" />
           <ButtonSmall :buttonText="HeroButton" :style="HeroButtonStyle" />
-
           <div class="home-hero-count">
             <span>
               <svg
@@ -85,7 +85,7 @@ export default {
           </div>
         </div>
 
-        <img src="./Book.png" alt="" />
+        <img src="./Book.png" alt="" class="desktop-book" />
       </div>
     </div>
   </div>
@@ -111,6 +111,10 @@ export default {
       display: flex;
       flex-direction: column;
       gap: 40px;
+
+      .mobile-book {
+        display: none;
+      }
     }
 
     .home-hero-count {
@@ -128,6 +132,25 @@ export default {
         font-family: "Inter", sans-serif;
         font-size: 24px;
         color: #b4c7e7;
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .home-hero-content {
+      flex-direction: column-reverse;
+
+      .home-hero-info {
+        text-align: center;
+        align-items: center;
+
+        .mobile-book {
+          display: flex;
+        }
+      }
+
+      .desktop-book {
+        display: none;
       }
     }
   }
