@@ -76,7 +76,7 @@ export default {
     <div class="body-styles">
       <div class="custom-container">
         <div class="content-styles">
-          <Colors /><!-- 
+          <Colors />
           <div class="paragraph-container">
             <p class="demo-title">Paragraph</p>
             <Paragraph :text="this.paragraph" />
@@ -107,7 +107,7 @@ export default {
               :style="this.titleColor"
             />
           </div>
-
+ 
           <div class="list-container">
             <p class="demo-title">List</p>
             <Lists :ordererList="this.ordererList" :unordererList="this.unordererList" />
@@ -124,7 +124,7 @@ export default {
             <SingleInput />
             <TextInput />
             <SubmitButton />
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
@@ -174,6 +174,25 @@ export default {
       display: flex;
       flex-direction: column;
       gap: 15px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    margin: 50px 0;
+
+    .content-styles {
+      gap: 50px;
+
+      .paragraph-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .buttons-container {
+        .buttons-demo {
+          flex-direction: column;
+        }
+      }
     }
   }
 }

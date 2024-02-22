@@ -22,6 +22,7 @@ export default {
 <style lang="scss">
 .button-big {
   display: flex;
+  justify-content: center;
   align-items: center;
   cursor: pointer;
   padding: 20px 95px;

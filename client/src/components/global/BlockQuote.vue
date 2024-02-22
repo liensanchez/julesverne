@@ -27,5 +27,12 @@ export default {
   font-size: 19px;
   color: #ffffff;
   font-weight: 500px;
+
+  @media (max-width: 1200px) {
+    padding: 40px;
+    font-size: 14px;
+  }
 }
+
+
 </style>
