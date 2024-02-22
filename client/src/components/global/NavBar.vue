@@ -7,7 +7,7 @@ export default {
         borderColor: "#FFCA42",
         backgroundColor: "#FFCA42",
       },
-      menuDropdown: true,
+      menuDropdown: false,
       menuMobile: false,
     };
   },
@@ -20,7 +20,6 @@ export default {
     },
     toggleMobile() {
       this.menuMobile = !this.menuMobile;
-      this.menuDropdown = !this.menuDropdown;
     },
   },
 };
@@ -28,6 +27,43 @@ export default {
 
 <template>
   <div class="navbar-container">
+    <div class="mobile-menu" v-if="this.menuMobile">
+      <div class="close-container">
+        <button @click="toggleMobile" class="close-burger">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M4 4L20 20M20 4L4 20"
+                stroke="#000000"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </g>
+          </svg>
+        </button>
+      </div>
+
+      <button class="option-button">Home</button>
+      <button class="option-button">Blog</button>
+      <button class="option-button">Licenses</button>
+      <button class="option-button">Changelog</button>
+      <button class="option-button">Styles</button>
+      <button class="option-button">About</button>
+      <button class="option-button">Contact</button>
+      <ButtonSmall :buttonText="'Download Books'" :style="style" />
+    </div>
+
     <div class="custom-container">
       <div class="navbar-left">
         <div class="navbar-logo">
@@ -89,6 +125,7 @@ export default {
           </button>
         </div>
       </div>
+
       <button class="option-burger" @click="toggleMobile">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -108,6 +145,7 @@ export default {
           </g>
         </svg>
       </button>
+
       <div class="navbar-options">
         <button class="option-button">Home</button>
         <div class="dropdown-option">
@@ -153,6 +191,10 @@ export default {
   width: 100%;
   display: flex;
   justify-content: center;
+
+  .mobile-menu {
+    display: none;
+  }
 
   .custom-container {
     display: flex;
@@ -268,6 +310,54 @@ export default {
   }
 
   @media (max-width: 1200px) {
+    .mobile-menu {
+      margin-top: -35px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      position: fixed;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.7);
+      width: 100%;
+      height: 100%;
+
+      .close-container {
+        width: 90%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 35px;
+
+        .close-burger {
+          width: 50px;
+          background: #FFCA42;
+          border: none;
+        }
+      }
+
+      .option-button {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        font-size: 25px;
+        color: #ffffff;
+        font-weight: 500;
+        border: none;
+        background: none;
+        background-color: transparent;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        span {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+
     .custom-container {
       .navbar-left {
         .navbar-social {
@@ -278,22 +368,12 @@ export default {
       .option-burger {
         display: flex;
         width: 50px;
+        background: #FFCA42;;
+        border: none;
       }
 
       .navbar-options {
-        height: 100%;
-        width: 100%;
-        margin-left: -5%;
-        margin-top: -5%;
-        background-color: #1b3764;
-        position: absolute;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        .option-button {
-
-        }
+        display: none;
       }
     }
   }
