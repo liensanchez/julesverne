@@ -19,10 +19,9 @@ const routes = [
     name: "error",
     component: Error,
   },
-  { 
-    path: "/:catchAll(.*)", 
-    name: "error", 
-    component: Error,
+  {
+    path: "/:catchAll(.*)",
+    redirect: "/404",
   },
 ];
 

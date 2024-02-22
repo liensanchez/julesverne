@@ -224,7 +224,7 @@
             </svg>
             Style Guide
           </router-link>
-          <a href="">
+          <router-link :to="{ name: 'error' }">
             <svg
               width="24"
               height="7"
@@ -248,8 +248,8 @@
                 stroke-width="1.5"
               />
             </svg>
-            404 not found</a
-          >
+            404 not found
+            </router-link>
           <a href="">
             <svg
               width="24"
