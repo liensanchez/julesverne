@@ -7,7 +7,8 @@ export default {
         borderColor: "#FFCA42",
         backgroundColor: "#FFCA42",
       },
-      menuDropdown: false,
+      menuDropdown: true,
+      menuMobile: false,
     };
   },
   components: {
@@ -15,6 +16,10 @@ export default {
   },
   methods: {
     toggleMenu() {
+      this.menuDropdown = !this.menuDropdown;
+    },
+    toggleMobile() {
+      this.menuMobile = !this.menuMobile;
       this.menuDropdown = !this.menuDropdown;
     },
   },
@@ -84,7 +89,25 @@ export default {
           </button>
         </div>
       </div>
-
+      <button class="option-burger" @click="toggleMobile">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M4 6H20M4 12H20M4 18H20"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </g>
+        </svg>
+      </button>
       <div class="navbar-options">
         <button class="option-button">Home</button>
         <div class="dropdown-option">
@@ -115,7 +138,6 @@ export default {
             <button class="option-button">Styles</button>
           </div>
         </div>
-
         <button class="option-button">About</button>
         <button class="option-button">Contact</button>
         <ButtonSmall :buttonText="'Download Books'" :style="style" />
@@ -185,6 +207,10 @@ export default {
       }
     }
 
+    .option-burger {
+      display: none;
+    }
+
     .navbar-options {
       display: flex;
       gap: 20px;
@@ -236,6 +262,37 @@ export default {
           &.visible {
             opacity: 1;
           }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .custom-container {
+      .navbar-left {
+        .navbar-social {
+          display: none;
+        }
+      }
+
+      .option-burger {
+        display: flex;
+        width: 50px;
+      }
+
+      .navbar-options {
+        height: 100%;
+        width: 100%;
+        margin-left: -5%;
+        margin-top: -5%;
+        background-color: #1b3764;
+        position: absolute;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .option-button {
+
         }
       }
     }
