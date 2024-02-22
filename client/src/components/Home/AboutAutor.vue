@@ -11,17 +11,17 @@ export default {
   },
   data() {
     return {
-      autorTitle: "About Author",
+      autorTitle: "About the Author",
       authorTitleColor: {
         color: "#1B3764",
       },
       authorText:
         "Jules Verne (1828-1905) was a French novelist widely regarded as one of the pioneers of science fiction. Born in Nantes, Verne's fascination with travel, exploration, and technological advancements is evident in his extensive body of work. His most famous novels include 'Twenty Thousand Leagues Under the Sea,' 'Journey to the Center of the Earth,' and 'Around the World in Eighty Days.' Verne's writing often showcased his meticulous research and foresight into future technologies, making his works both entertaining and remarkably prescient. His adventurous tales have captivated readers for generations, and his legacy endures as a seminal figure in the realm of speculative fiction.",
-      aboutButton: 'Read More',
+      aboutButton: "Read More",
       aboutButtonColor: {
         borderColor: "#FFCA42",
         backgroundColor: "#FFCA42",
-      }
+      },
     };
   },
 };
@@ -36,7 +36,10 @@ export default {
         </div>
 
         <div class="about-info">
-          <Titles :titleThree="this.autorTitle" :style="this.authorTitleColor" />
+          <Titles
+            :titleThree="this.autorTitle"
+            :style="this.authorTitleColor"
+          />
           <svg
             width="55"
             height="3"
@@ -47,7 +50,10 @@ export default {
             <line y1="1.5" x2="55" y2="1.5" stroke="#FFCA42" stroke-width="3" />
           </svg>
           <Paragraph :text="this.authorText" />
-          <ButtonBig :buttonText="this.aboutButton" :style="this.aboutButtonColor"/>
+          <ButtonBig
+            :buttonText="this.aboutButton"
+            :style="this.aboutButtonColor"
+          />
         </div>
       </div>
     </div>
@@ -70,12 +76,11 @@ export default {
       border: solid 10px #ffca42;
       margin-left: 50px;
       max-width: 40%;
-      min-height: 500px;
       padding-bottom: 20px;
 
       img {
         width: 100%;
-        height: 100%;
+        height: auto;
         margin-left: -20px;
         margin-top: -20px;
       }
@@ -86,6 +91,22 @@ export default {
       flex-direction: column;
       gap: 40px;
       width: 50%;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    padding: 50px 0;
+
+    .about-content {
+      flex-direction: column;
+
+      .about-image {
+        height: auto;
+      }
+
+      .about-info {
+        width: 100%;
+      }
     }
   }
 }

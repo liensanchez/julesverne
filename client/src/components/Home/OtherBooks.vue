@@ -152,11 +152,18 @@ export default {
   }
 
   @media (max-width: 1200px) {
+    margin: 50px 0;
+
     .otherbooks-preview {
       flex-direction: column;
 
       .otherbook-content {
         width: 100%;
+
+        img {
+          height: auto;
+          max-width: 40%;
+        }
       }
     }
   }
