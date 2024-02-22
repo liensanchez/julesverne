@@ -12,7 +12,7 @@ export default {
   },
   data() {
     return {
-      HeroTitle: "Books are uniquelyportable magic ",
+      HeroTitle: "Books are uniquely portable magic ",
       HeroTitleStyle: {
         color: "#FFFFFF",
       },
@@ -146,6 +146,13 @@ export default {
 
         .mobile-book {
           display: flex;
+        }
+      }
+
+      .home-hero-count {
+        span,
+        p {
+          font-size: 20px;
         }
       }
 

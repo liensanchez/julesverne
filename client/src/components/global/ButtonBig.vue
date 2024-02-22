@@ -36,5 +36,10 @@ export default {
     text-decoration: underline;
     transform: scale(1.1);
   }
+
+  @media (max-width: 1200px) {
+    padding: 10px 75px;
+    font-size: 15px;
+  }
 }
 </style>

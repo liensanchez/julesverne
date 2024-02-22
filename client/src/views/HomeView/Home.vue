@@ -26,8 +26,8 @@ export default {
   <div>
     <NavBar />
     <HomeHero />
-<!--     <OtherBooks />
-    <AboutAutor />
+<!--     <OtherBooks /> -->
+<!--     <AboutAutor />
     <CallToAction />
     <AuthorsCharacteristics />
     <Footer /> -->

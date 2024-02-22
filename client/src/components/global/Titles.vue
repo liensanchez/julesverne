@@ -55,4 +55,30 @@ export default {
 .t-6 {
   font-size: 22px;
 }
+
+@media (max-width: 768px) {
+  .t-1 {
+    font-size: 50px;
+  }
+
+  .t-2 {
+    font-size: 45px;
+  }
+
+  .t-3 {
+    font-size: 40px;
+  }
+
+  .t-4 {
+    font-size: 28px;
+  }
+
+  .t-5 {
+    font-size: 20px;
+  }
+
+  .t-6 {
+    font-size: 18px;
+  }
+}
 </style>

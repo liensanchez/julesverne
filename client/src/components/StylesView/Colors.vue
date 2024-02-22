@@ -44,13 +44,13 @@
     }
 
     .color-yellow {
-      background: #FFCA42;
+      background: #ffca42;
       height: 200px;
       width: 200px;
     }
 
     .color-white {
-      background: #F6F8FC;
+      background: #f6f8fc;
       height: 200px;
       width: 200px;
     }
@@ -59,6 +59,20 @@
       font-family: "Cardo", serif;
       font-size: 28px;
       color: #1b3764;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+
+    .color-box {
+      .color-blue,
+      .color-yellow,
+      .color-white {
+        width: 150px;
+        height: 150px;
+      }
+
     }
   }
 }

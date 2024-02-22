@@ -310,6 +310,7 @@ export default {
   }
 
   @media (max-width: 1200px) {
+    padding: 35px 0;
     .mobile-menu {
       margin-top: -35px;
       display: flex;
@@ -367,6 +368,7 @@ export default {
 
       .option-burger {
         display: flex;
+        justify-content: center;
         width: 50px;
         background: #FFCA42;;
         border: none;

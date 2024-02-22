@@ -150,5 +150,15 @@ export default {
       color: #b4c7e7;
     }
   }
+
+  @media (max-width: 1200px) {
+    .otherbooks-preview {
+      flex-direction: column;
+
+      .otherbook-content {
+        width: 100%;
+      }
+    }
+  }
 }
 </style>

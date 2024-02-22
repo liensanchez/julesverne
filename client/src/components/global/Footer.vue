@@ -443,5 +443,12 @@
       color: #ffffff;
     }
   }
+
+  @media (max-width: 1200px) {
+    .footer-top {
+      flex-direction: column;
+      gap: 25px;
+    }
+  }
 }
 </style>

@@ -76,7 +76,7 @@ export default {
     <div class="body-styles">
       <div class="custom-container">
         <div class="content-styles">
-          <Colors />
+          <Colors /><!-- 
           <div class="paragraph-container">
             <p class="demo-title">Paragraph</p>
             <Paragraph :text="this.paragraph" />
@@ -124,7 +124,7 @@ export default {
             <SingleInput />
             <TextInput />
             <SubmitButton />
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

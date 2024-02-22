@@ -22,4 +22,10 @@ export default {
   color: #969AA0;
   font-weight: 400px;
 }
+
+@media (max-width: 768px) {
+  .paragraph {
+    font-size: 16px;
+  }
+}
 </style>
