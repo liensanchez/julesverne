@@ -3,7 +3,7 @@
     <div class="custom-container">
       <div class="footer-top">
         <div class="footer-left">
-          <div class="footer-logo">
+          <router-link :to="{ name: 'styles-guide' }" class="footer-logo">
             <svg
               width="25"
               height="29"
@@ -18,7 +18,7 @@
             </svg>
 
             <h1 class="footer-logo-title">Jules Verne</h1>
-          </div>
+          </router-link>
           <div class="footer-social">
             <button class="social-button">
               <svg
@@ -64,7 +64,7 @@
 
         <div class="footer-links">
           <p class="footer-title">Explore</p>
-          <a href="">
+          <router-link :to="{ name: 'home' }">
             <svg
               width="24"
               height="7"
@@ -88,8 +88,8 @@
                 stroke-width="1.5"
               />
             </svg>
-            Home</a
-          >
+            Home
+          </router-link>
           <a href="">
             <svg
               width="24"
@@ -198,7 +198,7 @@
 
         <div class="footer-links">
           <p class="footer-title">Utility Pages</p>
-          <a href="">
+          <router-link :to="{ name: 'styles-guide' }">
             <svg
               width="24"
               height="7"
@@ -222,8 +222,8 @@
                 stroke-width="1.5"
               />
             </svg>
-            Style Guide</a
-          >
+            Style Guide
+          </router-link>
           <a href="">
             <svg
               width="24"
@@ -360,6 +360,7 @@
       gap: 25px;
 
       .footer-logo {
+        text-decoration: none;
         cursor: pointer;
         display: flex;
         align-items: center;

@@ -58,7 +58,7 @@ export default {
       <button class="option-button">Blog</button>
       <button class="option-button">Licenses</button>
       <button class="option-button">Changelog</button>
-      <button class="option-button">Styles</button>
+      <button class="option-button">Styles-guide</button>
       <button class="option-button">About</button>
       <button class="option-button">Contact</button>
       <ButtonSmall :buttonText="'Download Books'" :style="style" />
@@ -66,7 +66,7 @@ export default {
 
     <div class="custom-container">
       <div class="navbar-left">
-        <div class="navbar-logo">
+        <router-link :to="{ name: 'home' }"  class="navbar-logo">
           <svg
             width="25"
             height="29"
@@ -81,7 +81,7 @@ export default {
           </svg>
 
           <h1 class="navbar-title">Jules Verne</h1>
-        </div>
+        </router-link>
 
         <div class="navbar-social">
           <button class="social-button">
@@ -147,7 +147,7 @@ export default {
       </button>
 
       <div class="navbar-options">
-        <button class="option-button">Home</button>
+        <router-link :to="{ name: 'home' }" class="option-button">Home</router-link>
         <div class="dropdown-option">
           <button class="option-button" @click="toggleMenu">
             Pages
@@ -173,7 +173,7 @@ export default {
             <button class="option-button">Blog</button>
             <button class="option-button">Licenses</button>
             <button class="option-button">Changelog</button>
-            <button class="option-button">Styles</button>
+            <router-link :to="{ name: 'styles-guide' }" class="option-button">Styles</router-link>
           </div>
         </div>
         <button class="option-button">About</button>
@@ -207,6 +207,7 @@ export default {
       justify-content: space-between;
 
       .navbar-logo {
+        text-decoration: none;
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -267,6 +268,7 @@ export default {
         font-size: 17px;
         color: #ffffff;
         font-weight: 500;
+        text-decoration: none;
         border: none;
         background: none;
         background-color: transparent;
@@ -296,7 +298,8 @@ export default {
           opacity: 0;
           transition: opacity 0.3s ease;
 
-          button {
+          .option-button {
+            text-decoration: none;
             background: #1b3764;
             padding: 5px;
           }

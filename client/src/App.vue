@@ -17,6 +17,10 @@ export default {
   scroll-behavior: smooth;
 }
 
+router-link {
+  text-decoration: none;
+}
+
 .custom-container {
   width: 80%;
   max-width: 1920px;

@@ -10,7 +10,7 @@ const routes = [
   },
   {
     path: '/styles-guide',
-    name: 'Styles Guide',
+    name: 'styles-guide',
     component: Styles
   }
 ]
