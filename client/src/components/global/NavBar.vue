@@ -186,7 +186,7 @@ export default {
 
 <style lang="scss">
 .navbar-container {
-  padding-top: 35px;
+  padding: 35px 0;
   background-color: #1b3764;
   width: 100%;
   display: flex;

@@ -17,7 +17,8 @@ export default {
   scroll-behavior: smooth;
 }
 
-router-link {
+router-link,
+a {
   text-decoration: none;
 }
 
