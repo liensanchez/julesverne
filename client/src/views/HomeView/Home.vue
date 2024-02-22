@@ -28,9 +28,9 @@ export default {
     <HomeHero />
     <OtherBooks />
     <AboutAutor />
-<!--     <CallToAction />
+    <CallToAction />
     <AuthorsCharacteristics />
-    <Footer /> -->
+    <Footer />
   </div>
 </template>
 

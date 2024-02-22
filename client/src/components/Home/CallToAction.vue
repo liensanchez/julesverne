@@ -74,5 +74,20 @@ export default {
       gap: 15px;
     }
   }
+
+  @media (max-width: 1200px) {
+    .calltoaction-content {
+      flex-direction: column;
+      gap: 25px;
+
+      .calltoaction-info  {
+        max-width: 100%;
+      }
+
+      img {
+        width: 90%;
+      }
+    }
+  }
 }
 </style>

@@ -18,7 +18,6 @@ export default {
 
 <template>
   <div class="authorCharacteristics-container">
-    <!--      -->
     <div class="custom-container">
       <div class="authorCharacteristics-content">
         <Titles
@@ -52,6 +51,9 @@ export default {
                 exploration, adventure, and technological marvels within Jules
                 Verne's books.
               </p>
+            </div>
+            <div class="authorCharacteristics-image-mobile">
+              <img src="../../assets/person-reading.png" alt="" />
             </div>
             <div class="characteristic-card">
               <div class="card-number">3</div>
@@ -105,6 +107,10 @@ export default {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 20px;
 
+        .authorCharacteristics-image-mobile {
+          display: none;
+        }
+
         .characteristic-card {
           display: flex;
           flex-direction: column;
@@ -142,6 +148,41 @@ export default {
           max-height: 500px;
           margin-left: -20px;
           margin-top: -20px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .authorCharacteristics-content {
+      .characteristics {
+        flex-direction: column;
+
+        .authorCharacteristics-cards {
+          max-width: 100%;
+
+          .authorCharacteristics-image-mobile {
+            display: flex;
+            border: solid 10px #ffca42;
+            margin-left: 50px;
+            max-width: 100%;
+            padding-bottom: 20px;
+
+            img {
+              width: 100%;
+              height: auto;
+              margin-left: -20px;
+              margin-top: -20px;
+            }
+          }
+
+          .characteristic-card {
+            font-size: 20px;
+          }
+        }
+
+        .authorCharacteristics-image {
+          display: none;
         }
       }
     }

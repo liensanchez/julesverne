@@ -105,6 +105,7 @@ export default {
       }
 
       .about-info {
+        gap: 10px;
         width: 100%;
       }
     }
