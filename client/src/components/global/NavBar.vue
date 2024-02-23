@@ -64,7 +64,9 @@ export default {
       >
       <button class="option-button">About</button>
       <button class="option-button">Contact</button>
-      <ButtonSmall :buttonText="'Download Books'" :style="style" />
+      <router-link :to="{ name: 'download' }" class="option-button">
+        <ButtonSmall :buttonText="'Download Books'" :style="style" />
+      </router-link>
     </div>
 
     <div class="custom-container">
