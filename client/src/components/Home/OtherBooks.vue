@@ -22,9 +22,9 @@ export default {
       },
       bookButton: "Download",
       bookButtonStyles: {
-        color: "#1B3764",
-        background: "#ffffff",
-        border: "1px solid #FFCA42",
+        color: "#FFCA42",
+        background: "#1B3764",
+        border: "none",
       },
       bookOne: [],
       bookTwo: [],

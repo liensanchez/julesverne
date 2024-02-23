@@ -83,7 +83,7 @@ export default {
           <h1 class="navbar-title">Jules Verne</h1>
         </router-link>
 
-        <div class="navbar-social">
+<!--         <div class="navbar-social">
           <button class="social-button">
             <svg
               width="10"
@@ -123,7 +123,7 @@ export default {
               />
             </svg>
           </button>
-        </div>
+        </div> -->
       </div>
 
       <button class="option-burger" @click="toggleMobile">

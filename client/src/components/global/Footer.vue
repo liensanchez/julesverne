@@ -19,7 +19,7 @@
 
             <h1 class="footer-logo-title">Jules Verne</h1>
           </router-link>
-          <div class="footer-social">
+<!--           <div class="footer-social">
             <button class="social-button">
               <svg
                 width="10"
@@ -59,7 +59,7 @@
                 />
               </svg>
             </button>
-          </div>
+          </div> -->
         </div>
 
         <div class="footer-links">
