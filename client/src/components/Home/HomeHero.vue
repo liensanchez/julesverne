@@ -186,6 +186,7 @@ export default {
 
         .mobile-book {
           display: flex;
+          max-width: 90%;
         }
       }
 
