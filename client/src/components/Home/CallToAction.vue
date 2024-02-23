@@ -43,10 +43,12 @@ export default {
             <line y1="1.5" x2="55" y2="1.5" stroke="#FFCA42" stroke-width="3" />
           </svg>
           <Paragraph :text="this.ctaText" />
-          <ButtonSmall
-            :buttonText="this.ctaButton"
-            :style="this.ctaButtonColor"
-          />
+          <router-link :to="{ name: 'download' }">
+            <ButtonSmall
+              :buttonText="this.ctaButton"
+              :style="this.ctaButtonColor"
+            />
+          </router-link>
         </div>
 
         <img src="../../assets/Photo.png" alt="" />
@@ -80,7 +82,7 @@ export default {
       flex-direction: column;
       gap: 25px;
 
-      .calltoaction-info  {
+      .calltoaction-info {
         max-width: 100%;
       }
 

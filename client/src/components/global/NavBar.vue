@@ -54,10 +54,14 @@ export default {
         </button>
       </div>
 
-      <router-link :to="{ name: 'home' }" class="option-button">Home</router-link>
+      <router-link :to="{ name: 'home' }" class="option-button"
+        >Home</router-link
+      >
       <button class="option-button">Licenses</button>
       <button class="option-button">Changelog</button>
-      <router-link :to="{ name: 'styles-guide' }" class="option-button">Styles-guide</router-link>
+      <router-link :to="{ name: 'styles-guide' }" class="option-button"
+        >Styles-guide</router-link
+      >
       <button class="option-button">About</button>
       <button class="option-button">Contact</button>
       <ButtonSmall :buttonText="'Download Books'" :style="style" />
@@ -65,7 +69,7 @@ export default {
 
     <div class="custom-container">
       <div class="navbar-left">
-        <router-link :to="{ name: 'home' }"  class="navbar-logo">
+        <router-link :to="{ name: 'home' }" class="navbar-logo">
           <svg
             width="25"
             height="29"
@@ -82,7 +86,7 @@ export default {
           <h1 class="navbar-title">Jules Verne</h1>
         </router-link>
 
-<!--         <div class="navbar-social">
+        <!--         <div class="navbar-social">
           <button class="social-button">
             <svg
               width="10"
@@ -146,7 +150,9 @@ export default {
       </button>
 
       <div class="navbar-options">
-        <router-link :to="{ name: 'home' }" class="option-button">Home</router-link>
+        <router-link :to="{ name: 'home' }" class="option-button"
+          >Home</router-link
+        >
         <div class="dropdown-option">
           <button class="option-button" @click="toggleMenu">
             Pages
@@ -171,12 +177,16 @@ export default {
           <div class="dropdown-buttons" :class="{ visible: menuDropdown }">
             <button class="option-button">Licenses</button>
             <button class="option-button">Changelog</button>
-            <router-link :to="{ name: 'styles-guide' }" class="option-button">Styles</router-link>
+            <router-link :to="{ name: 'styles-guide' }" class="option-button"
+              >Styles</router-link
+            >
           </div>
         </div>
         <button class="option-button">About</button>
         <button class="option-button">Contact</button>
-        <ButtonSmall :buttonText="'Download Books'" :style="style" />
+        <router-link :to="{ name: 'download' }" class="option-button">
+          <ButtonSmall :buttonText="'Download Books'" :style="style" />
+        </router-link>
       </div>
     </div>
   </div>
@@ -331,7 +341,7 @@ export default {
 
         .close-burger {
           width: 50px;
-          background: #FFCA42;
+          background: #ffca42;
           border: none;
         }
       }
@@ -371,7 +381,7 @@ export default {
         display: flex;
         justify-content: center;
         width: 50px;
-        background: #FFCA42;;
+        background: #ffca42;
         border: none;
       }
 
