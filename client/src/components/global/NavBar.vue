@@ -55,7 +55,6 @@ export default {
       </div>
 
       <router-link :to="{ name: 'home' }" class="option-button">Home</router-link>
-      <button class="option-button">Blog</button>
       <button class="option-button">Licenses</button>
       <button class="option-button">Changelog</button>
       <router-link :to="{ name: 'styles-guide' }" class="option-button">Styles-guide</router-link>
@@ -170,7 +169,6 @@ export default {
             </span>
           </button>
           <div class="dropdown-buttons" :class="{ visible: menuDropdown }">
-            <button class="option-button">Blog</button>
             <button class="option-button">Licenses</button>
             <button class="option-button">Changelog</button>
             <router-link :to="{ name: 'styles-guide' }" class="option-button">Styles</router-link>

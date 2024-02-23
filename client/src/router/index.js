@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/HomeView/Home.vue";
 import Styles from "../views/StylesView/Styles.vue";
+import Books from "../views/Books/Books.vue"
 import Error from "../views/Error/Error.vue";
 
 const routes = [
@@ -18,6 +19,11 @@ const routes = [
     path: "/404",
     name: "error",
     component: Error,
+  },
+  {
+    path: "/download-books",
+    name: "download",
+    component: Books,
   },
   {
     path: "/:catchAll(.*)",
