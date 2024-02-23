@@ -54,11 +54,11 @@ export default {
         </button>
       </div>
 
-      <button class="option-button">Home</button>
+      <router-link :to="{ name: 'home' }" class="option-button">Home</router-link>
       <button class="option-button">Blog</button>
       <button class="option-button">Licenses</button>
       <button class="option-button">Changelog</button>
-      <button class="option-button">Styles-guide</button>
+      <router-link :to="{ name: 'styles-guide' }" class="option-button">Styles-guide</router-link>
       <button class="option-button">About</button>
       <button class="option-button">Contact</button>
       <ButtonSmall :buttonText="'Download Books'" :style="style" />

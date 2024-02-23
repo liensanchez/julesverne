@@ -1,4 +1,5 @@
 <script>
+import axios from "axios";
 import Titles from "../global/Titles.vue";
 import Paragraph from "../global/Paragraph.vue";
 import ButtonSmall from "../global/ButtonSmall.vue";
@@ -16,20 +17,73 @@ export default {
         color: "#1B3764",
         textAlign: "center",
       },
-      titleBook: "Book",
       titleBookColor: {
         color: "#1B3764",
       },
-      textBook:
-        "Many variations of passages of Lorem Ipsum willing araise  alteration in some form.",
-      bookLength: "155",
       bookButton: "Download",
       bookButtonStyles: {
         color: "#1B3764",
         background: "#ffffff",
         border: "1px solid #FFCA42",
       },
+      bookOne: [],
+      bookTwo: [],
+      textOne: "",
+      textTwo: "",
     };
+  },
+  methods: {
+    fetchBookOne() {
+      const apiUrl = "https://www.googleapis.com/books/v1/volumes/OhsZEAAAQBAJ";
+
+      axios
+        .get(apiUrl)
+        .then((response) => {
+          this.bookOne = response.data.volumeInfo;
+          this.textOne = this.bookOne.description;
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    },
+    fetchBookTwo() {
+      const apiUrl = "https://www.googleapis.com/books/v1/volumes/Ch0ZEAAAQBAJ";
+
+      axios
+        .get(apiUrl)
+        .then((response) => {
+          this.bookTwo = response.data.volumeInfo;
+          this.textTwo = this.bookTwo.description;
+          console.log(this.bookTwo);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    },
+  },
+  computed: {
+    cleanDescriptionOne() {
+      return this.textOne.replace(/<\/?[^>]+(>|$)/g, "");
+    },
+    truncatedDescriptionOne() {
+      const cleanedTextOne = this.cleanDescriptionOne;
+      return cleanedTextOne.length > 350
+        ? cleanedTextOne.slice(0, 350) + "..."
+        : cleanedTextOne;
+    },
+    cleanDescriptionTwo() {
+      return this.textTwo.replace(/<\/?[^>]+(>|$)/g, "");
+    },
+    truncatedDescriptionTwo() {
+      const cleanedTextTwo = this.cleanDescriptionTwo;
+      return cleanedTextTwo.length > 350
+        ? cleanedTextTwo.slice(0, 350) + "..."
+        : cleanedTextTwo;
+    },
+  },
+  mounted() {
+    this.fetchBookOne();
+    this.fetchBookTwo();
   },
 };
 </script>
@@ -37,14 +91,26 @@ export default {
 <template>
   <div class="otherbooks-container">
     <div class="custom-container">
-      <Titles :titleThree="this.titleComponent" :style="this.titleComponentColor" />
+      <Titles
+        :titleThree="this.titleComponent"
+        :style="this.titleComponentColor"
+      />
 
-      <div class="otherbooks-preview">
+      <div class="loader" v-if="!this.bookOne || !this.bookTwo"></div>
+      <div class="otherbooks-preview" v-if="this.bookOne && this.bookTwo">
         <div class="otherbook-content">
-          <img src="./Book.png" alt="" />
+          <img
+            v-if="this.bookOne.imageLinks && this.bookOne.imageLinks.extraLarge"
+            :src="this.bookOne.imageLinks.extraLarge"
+            alt="Book Cover"
+          />
+
           <div class="otherbook-info">
-            <Titles :titleFour="this.titleBook" :style="this.titleBookColor" />
-            <Paragraph :text="this.textBook" />
+            <Titles
+              :titleFour="this.bookOne.title"
+              :style="this.titleBookColor"
+            />
+            <Paragraph :text="this.truncatedDescriptionOne" />
             <div class="book-count">
               <span>
                 <svg
@@ -62,18 +128,30 @@ export default {
                 Pages:
               </span>
               <p>
-                {{ this.bookLength }}
+                {{ this.bookOne.pageCount }}
               </p>
             </div>
-            <ButtonSmall :buttonText="this.bookButton" :style="this.bookButtonStyles" />
+            <a :href="this.bookOne.previewLink">
+              <ButtonSmall
+                :buttonText="this.bookButton"
+                :style="this.bookButtonStyles"
+              />
+            </a>
           </div>
         </div>
 
         <div class="otherbook-content">
-          <img src="./Book.png" alt="" />
+          <img
+            v-if="this.bookTwo.imageLinks && this.bookTwo.imageLinks.extraLarge"
+            :src="this.bookTwo.imageLinks.extraLarge"
+            alt="Book Cover"
+          />
           <div class="otherbook-info">
-            <Titles :titleFour="this.titleBook" :style="this.titleBookColor" />
-            <Paragraph :text="this.textBook" />
+            <Titles
+              :titleFour="this.bookTwo.title"
+              :style="this.titleBookColor"
+            />
+            <Paragraph :text="this.truncatedDescriptionTwo" />
             <div class="book-count">
               <span>
                 <svg
@@ -91,10 +169,15 @@ export default {
                 Pages:
               </span>
               <p>
-                {{ this.bookLength }}
+                {{ this.bookTwo.pageCount }}
               </p>
             </div>
-            <ButtonSmall :buttonText="this.bookButton" :style="this.bookButtonStyles" />
+            <a :href="this.bookTwo.previewLink">
+              <ButtonSmall
+                :buttonText="this.bookButton"
+                :style="this.bookButtonStyles"
+              />
+            </a>
           </div>
         </div>
       </div>
@@ -108,6 +191,21 @@ export default {
   display: flex;
   justify-content: center;
 
+  .loader {
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 30px;
+    animation: l1 1s linear infinite alternate;
+  }
+  .loader:before {
+    content: "Loading...";
+  }
+  @keyframes l1 {
+    to {
+      opacity: 0;
+    }
+  }
+
   .otherbooks-preview {
     display: flex;
     justify-content: space-between;
@@ -120,6 +218,7 @@ export default {
       margin-top: 45px;
 
       img {
+        border: solid 1px #1b3764;
         max-width: 60%;
         height: auto;
         height: 420px;
@@ -141,7 +240,7 @@ export default {
     span {
       font-family: "Cardo", serif;
       font-size: 24px;
-      color: #1B3764;
+      color: #1b3764;
     }
 
     p {

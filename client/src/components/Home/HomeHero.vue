@@ -12,7 +12,6 @@ export default {
   },
   data() {
     return {
-      HeroTitle: "Books are uniquely portable magic ",
       HeroTitleStyle: {
         color: "#FFFFFF",
       },
@@ -23,25 +22,18 @@ export default {
         borderColor: "#FFCA42",
         backgroundColor: "#FFCA42",
       },
-      bookLength: "1500",
+      book: null,
     };
   },
   methods: {
     fetchData() {
-      const apiUrl = "https://www.googleapis.com/books/v1/volumes";
-      const query = "inauthor:julio+verne";
-      axios
-        .get(apiUrl, {
-          params: {
-            q: query,
-          },
-        })
-        .then((response) => {
-          const items = response.data.items;
+      // Replace the book ID or ISBN in the URL
+      const apiUrl = "https://www.googleapis.com/books/v1/volumes/__AYAAAAYAAJ";
 
-          items.forEach((item) => {
-            console.log(item.volumeInfo);
-          });
+      axios
+        .get(apiUrl)
+        .then((response) => {
+          this.book = response.data.volumeInfo; 
         })
         .catch((error) => {
           console.error("Error fetching data:", error);
@@ -58,11 +50,19 @@ export default {
   <div class="home-hero-container">
     <div class="custom-container">
       <div class="home-hero-content">
-        <div class="home-hero-info">
-          <Titles :titleOne="HeroTitle" :style="HeroTitleStyle" />
-          <Paragraph :text="HeroText" />
-          <img src="./Book.png" alt="" class="mobile-book" />
-          <ButtonSmall :buttonText="HeroButton" :style="HeroButtonStyle" />
+        <div class="loader" v-if="!this.book"></div>
+        <div class="home-hero-info" v-if="this.book">
+          <Titles :titleOne="this.book.title" :style="HeroTitleStyle" />
+          <Paragraph :text="this.book.description" />
+          <img
+            src="https://books.google.com.ar/books/content?id=__AYAAAAYAAJ&hl=es&pg=PP1&img=1&zoom=3&sig=ACfU3U2bnNKR6naTYM7KAEdftTv_OaRVBw&ci=38%2C40%2C911%2C1263&edge=0"
+            alt="book-cover"
+            class="mobile-book"
+          />
+          <a :href="this.book.previewLink">
+            <ButtonSmall :buttonText="HeroButton" :style="HeroButtonStyle" />
+          </a>
+
           <div class="home-hero-count">
             <span>
               <svg
@@ -80,12 +80,34 @@ export default {
               Pages:
             </span>
             <p>
-              {{ this.bookLength }}
+              {{ this.book.pageCount }}
+            </p>
+            <span>
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 15 15"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M7.5 15C11.6421 15 15 11.6421 15 7.5C15 3.35786 11.6421 0 7.5 0C3.35786 0 0 3.35786 0 7.5C0 11.6421 3.35786 15 7.5 15Z"
+                  fill="#FFCA42"
+                />
+              </svg>
+              Published:
+            </span>
+            <p>
+              {{ this.book.publishedDate }}
             </p>
           </div>
         </div>
 
-        <img src="./Book.png" alt="" class="desktop-book" />
+        <img
+          src="https://books.google.com.ar/books/content?id=__AYAAAAYAAJ&hl=es&pg=PP1&img=1&zoom=3&sig=ACfU3U2bnNKR6naTYM7KAEdftTv_OaRVBw&ci=38%2C40%2C911%2C1263&edge=0"
+          class="desktop-book"
+          v-if="this.book"
+        />
       </div>
     </div>
   </div>
@@ -103,7 +125,25 @@ export default {
     align-items: center;
     gap: 70px;
 
-    img {
+    
+    .loader {
+      font-weight: bold;
+      font-family: sans-serif;
+      font-size: 30px;
+      animation: l1 1s linear infinite alternate;
+    }
+    .loader:before {
+      content: "Loading...";
+    }
+    @keyframes l1 {
+      to {
+        opacity: 0;
+      }
+    }
+
+    .desktop-book {
+      width: 100%;
+      height: auto;
       max-width: 40%;
     }
 
