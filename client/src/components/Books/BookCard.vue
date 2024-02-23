@@ -9,16 +9,35 @@ export default {
     Paragraph,
     ButtonSmall,
   },
+  props: {
+    bookInfo: {
+      type: Object,
+    },
+  },
+  methods: {
+    truncateDescription(description) {
+      const maxLength = 100;
+      if (description.length <= maxLength) {
+        return description;
+      } else {
+        const truncatedDescription = description.substring(0, maxLength);
+        // Find the last space to ensure we don't cut off in the middle of a word
+        const lastSpaceIndex = truncatedDescription.lastIndexOf(" ");
+        const withoutPTags =
+          truncatedDescription.substring(0, lastSpaceIndex) + "...";
+        // Remove surrounding <p> tags
+        return withoutPTags.replace(/<\/?[^>]+(>|$)/g, "");
+      }
+    },
+  },
   data() {
     return {
-      bookTitle: "Atomic One’s",
-      bookDescription:
-        "Many variations of passages of Lorem Ipsum willing araise alteration in some form.",
       buttonText: "Download",
       buttonStyle: {
         borderColor: "#FFCA42",
         backgroundColor: "#FFCA42",
       },
+      description: "No description availabe",
     };
   },
 };
@@ -27,11 +46,19 @@ export default {
 <template>
   <div class="bookCard-container">
     <div class="bookCard-image-container">
-      <img src="../../assets/Book.png" alt="" class="bookCard-image-content" />
+      <img
+            v-if="this.bookInfo.imageLinks && this.bookInfo.imageLinks.extraLarge"
+            :src="this.bookInfo.imageLinks.extraLarge"
+            alt="Book Cover"
+            class="bookCard-image-content "
+          />
     </div>
     <div class="bookCard-info-container">
-      <Titles :titleFour="bookTitle" />
-      <Paragraph :text="bookDescription" />
+      <Titles :titleFour="this.bookInfo.title" />
+      <Paragraph
+        v-if="bookInfo.description"
+        :text="truncateDescription(bookInfo.description)"
+      />
       <div class="book-count">
         <span>
           <svg
@@ -48,9 +75,11 @@ export default {
           </svg>
           Pages:
         </span>
-        <p>300</p>
+        <p>{{ this.bookInfo.pageCount }}</p>
       </div>
-      <ButtonSmall :style="buttonStyle" :buttonText="buttonText" />
+      <a :href="this.bookInfo.previewLink">
+        <ButtonSmall :style="buttonStyle" :buttonText="buttonText" />
+      </a>
     </div>
   </div>
 </template>
