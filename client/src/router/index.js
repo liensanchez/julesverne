@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/HomeView/Home.vue";
 import Styles from "../views/StylesView/Styles.vue";
 import Books from "../views/Books/Books.vue"
+import About from "../views/About/About.vue"
 import Error from "../views/Error/Error.vue";
 
 const routes = [
@@ -14,6 +15,11 @@ const routes = [
     path: "/styles-guide",
     name: "styles-guide",
     component: Styles,
+  },
+  {
+    path: "/about",
+    name: "about",
+    component: About,
   },
   {
     path: "/404",

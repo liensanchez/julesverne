@@ -62,8 +62,8 @@ export default {
       <router-link :to="{ name: 'styles-guide' }" class="option-button"
         >Styles-guide</router-link
       >
-      <button class="option-button">About</button>
-      <button class="option-button">Contact</button>
+      <router-link :to="{ name: 'about' }" class="option-button">About</router-link>
+      <!-- <button class="option-button">Contact</button> -->
       <ButtonSmall :buttonText="'Download Books'" :style="style" />
     </div>
 
@@ -182,7 +182,7 @@ export default {
             >
           </div>
         </div>
-        <button class="option-button">About</button>
+        <router-link :to="{ name: 'about' }"  class="option-button">About</router-link>
         <button class="option-button">Contact</button>
         <router-link :to="{ name: 'download' }" class="option-button">
           <ButtonSmall :buttonText="'Download Books'" :style="style" />

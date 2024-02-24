@@ -114,7 +114,7 @@
                 stroke-width="1.5"
               />
             </svg>
-            About Us</a
+            About </a
           >
           <a href="">
             <svg
@@ -140,9 +140,9 @@
                 stroke-width="1.5"
               />
             </svg>
-            Services</a
+            Books</a
           >
-          <a href=""
+<!--           <a href=""
             ><svg
               width="24"
               height="7"
@@ -167,7 +167,7 @@
               />
             </svg>
             Contact Us</a
-          >
+          > -->
         </div>
 
         <div class="footer-links">
