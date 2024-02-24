@@ -17,12 +17,12 @@ export default {
 
 <template>
   <div>
-    <h1 class="title t-1" :style="style">{{ this.titleOne }}</h1>
-    <h2 class="title t-2" :style="style">{{ this.titleTwo }}</h2>
-    <h3 class="title t-3" :style="style">{{ this.titleThree }}</h3>
-    <h4 class="title t-4" :style="style">{{ this.titleFour }}</h4>
-    <h5 class="title t-5" :style="style">{{ this.titleFive }}</h5>
-    <h6 class="title t-6" :style="style">{{ this.titleSix }}</h6>
+    <h1 class="title t-1" :style="style" v-if="this.titleOne">{{ this.titleOne }}</h1>
+    <h2 class="title t-2" :style="style" v-if="this.titleTwo">{{ this.titleTwo }}</h2>
+    <h3 class="title t-3" :style="style" v-if="this.titleThree">{{ this.titleThree }}</h3>
+    <h4 class="title t-4" :style="style" v-if="this.titleFour">{{ this.titleFour }}</h4>
+    <h5 class="title t-5" :style="style" v-if="this.titleFive">{{ this.titleFive }}</h5>
+    <h6 class="title t-6" :style="style" v-if="this.titleSix">{{ this.titleSix }}</h6>
   </div>
 </template>
 
