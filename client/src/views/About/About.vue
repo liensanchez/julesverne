@@ -3,6 +3,7 @@ import NavBar from '@/components/global/NavBar.vue';
 import Hero from '@/components/global/Hero.vue'
 import BasicInfo from '@/components/About/BasicInfo.vue';
 import Life from '@/components/About/Life.vue';
+import BooksCarousel from '@/components/global/BooksCarousel.vue';
 import Footer from '@/components/global/Footer.vue';
 
 
@@ -12,6 +13,7 @@ export default {
     Hero,
     BasicInfo,
     Life,
+    BooksCarousel,
     Footer
   },
   data() {
@@ -30,6 +32,7 @@ export default {
     <Hero :heroTitle="heroTitle" :heroText="heroText"/>
     <BasicInfo />
     <Life />
+    <BooksCarousel />
     <Footer />
   </div>
 </template>
