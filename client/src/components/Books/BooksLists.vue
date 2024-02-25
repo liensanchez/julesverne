@@ -44,7 +44,7 @@ export default {
   <div class="booksLists-container">
     <div class="custom-container">
       <div class="booksLists-content">
-        <BookCard v-for="book in this.books" :bookInfo="book"/>
+        <BookCard v-for="book in this.books" :bookInfo="book" />
       </div>
     </div>
   </div>
@@ -60,6 +60,10 @@ export default {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 50px;
+  }
+
+  @media (max-width: 1200px) {
+    padding: 50px 0;
   }
 }
 </style>

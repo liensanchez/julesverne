@@ -1,9 +1,7 @@
 <script>
 import NavBar from '@/components/global/NavBar.vue';
 import Hero from '@/components/global/Hero.vue'
-import BasicInfo from '@/components/About/BasicInfo.vue';
-import Life from '@/components/About/Life.vue';
-import BooksCarousel from '@/components/global/BooksCarousel.vue';
+import TechnologiesBody from '@/components/Technologies/TechnologiesBody.vue'
 import Footer from '@/components/global/Footer.vue';
 
 
@@ -11,16 +9,14 @@ export default {
   components: {
     NavBar,
     Hero,
-    BasicInfo,
-    Life,
-    BooksCarousel,
+    TechnologiesBody,
     Footer
   },
   data() {
     return {
-      heroTitle: "About Jules Verne",
+      heroTitle: "Technologies",
       heroText:
-        "I dream with my eyes open.",
+        "Science, my lad, is made up of mistakes, but they are mistakes which it is useful to make, because they lead little by little to the truth.",
     }
   }
 }
@@ -30,9 +26,7 @@ export default {
   <div>
     <NavBar />
     <Hero :heroTitle="heroTitle" :heroText="heroText"/>
-    <BasicInfo />
-    <Life />
-    <BooksCarousel />
+    <TechnologiesBody />
     <Footer />
   </div>
 </template>

@@ -19,7 +19,7 @@
 
             <h1 class="footer-logo-title">Jules Verne</h1>
           </router-link>
-<!--           <div class="footer-social">
+          <!--           <div class="footer-social">
             <button class="social-button">
               <svg
                 width="10"
@@ -90,7 +90,7 @@
             </svg>
             Home
           </router-link>
-          <a href="">
+          <router-link :to="{ name: 'about' }">
             <svg
               width="24"
               height="7"
@@ -114,9 +114,9 @@
                 stroke-width="1.5"
               />
             </svg>
-            About </a
-          >
-          <a href="">
+            About
+          </router-link>
+          <router-link :to="{ name: 'download' }">
             <svg
               width="24"
               height="7"
@@ -140,9 +140,9 @@
                 stroke-width="1.5"
               />
             </svg>
-            Books</a
+            Books</router-link
           >
-<!--           <a href=""
+          <!--           <a href=""
             ><svg
               width="24"
               height="7"
@@ -223,8 +223,8 @@
               />
             </svg>
             404 not found
-            </router-link>
-          <a href="">
+          </router-link>
+          <router-link :to="{ name: 'changelog' }">
             <svg
               width="24"
               height="7"
@@ -248,9 +248,8 @@
                 stroke-width="1.5"
               />
             </svg>
-            Changelog</a
-          >
-          <a href=""
+            Changelog</router-link>
+          <router-link :to="{ name: 'technologies' }"
             ><svg
               width="24"
               height="7"
@@ -274,15 +273,16 @@
                 stroke-width="1.5"
               />
             </svg>
-            Licenses</a
-          >
+            Technologies</router-link>
         </div>
 
         <div class="footer-links">
           <p class="footer-title">Keep in Touch</p>
           <div>
             <span>Mail:</span>
-            <a href="mailto:liensilviosanchez@gmail.com">liensilviosanchez@gmail.com</a>
+            <a href="mailto:liensilviosanchez@gmail.com"
+              >liensilviosanchez@gmail.com</a
+            >
           </div>
         </div>
       </div>

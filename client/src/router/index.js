@@ -4,6 +4,8 @@ import Styles from "../views/StylesView/Styles.vue";
 import Books from "../views/Books/Books.vue"
 import About from "../views/About/About.vue"
 import Error from "../views/Error/Error.vue";
+import Changelog from "../views/Changelog/Changelog.vue";
+import Technologies from "../views/Technologies/Technologies.vue";
 
 const routes = [
   {
@@ -15,6 +17,16 @@ const routes = [
     path: "/styles-guide",
     name: "styles-guide",
     component: Styles,
+  },
+  {
+    path: "/changelog",
+    name: "changelog",
+    component: Changelog,
+  },
+  {
+    path: "/technologies",
+    name: "technologies",
+    component: Technologies,
   },
   {
     path: "/about",
