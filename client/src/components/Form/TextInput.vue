@@ -1,3 +1,11 @@
+<script>
+export default {
+  props: {
+    valueText: String,
+  },
+}
+</script>
+
 <template>
   <div class="text-content">
     <svg
@@ -22,7 +30,7 @@
         stroke-linejoin="round"
       />
     </svg>
-    <textarea placeholder="Message" />
+    <textarea placeholder="Message" :value="valueText" @input="$emit('update:valueText', $event.target.value)"/>
   </div>
 </template>
 

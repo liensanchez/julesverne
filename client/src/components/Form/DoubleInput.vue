@@ -1,3 +1,12 @@
+<script>
+export default {
+  props: {
+    valueOne: String,
+    valueTwo: String,
+  },
+}
+</script>
+
 <template>
   <div class="input-container">
     <div class="double-content">
@@ -24,7 +33,7 @@
         />
       </svg>
 
-      <input type="text" placeholder="Name" />
+      <input :value="valueOne" @input="$emit('update:valueOne', $event.target.value)" placeholder="Name" />
     </div>
 
     <div class="double-content">
@@ -51,7 +60,7 @@
         />
       </svg>
 
-      <input type="text" placeholder="Email" />
+      <input :value="valueTwo" @input="$emit('update:valueTwo', $event.target.value)" placeholder="Email" />
     </div>
   </div>
 </template>

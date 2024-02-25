@@ -1,10 +1,14 @@
 <script>
-export default {};
+export default {
+  props: {
+    submitMethod: Function,
+  },
+};
 </script>
 
 <template>
   <div class="submit-content">
-    <button class="submit-button">Get an Appointment</button>
+    <button class="submit-button" @click="submitMethod">Get an Appointment</button>
   </div>
 </template>
 
