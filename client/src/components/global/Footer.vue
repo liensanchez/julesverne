@@ -142,8 +142,7 @@
             </svg>
             Books</router-link
           >
-          <!--           <a href=""
-            ><svg
+          <router-link :to="{ name: 'contact' }" class="option-button"><svg
               width="24"
               height="7"
               viewBox="0 0 24 7"
@@ -166,8 +165,7 @@
                 stroke-width="1.5"
               />
             </svg>
-            Contact Us</a
-          > -->
+            Contact Us</router-link>
         </div>
 
         <div class="footer-links">
@@ -248,7 +246,8 @@
                 stroke-width="1.5"
               />
             </svg>
-            Changelog</router-link>
+            Changelog</router-link
+          >
           <router-link :to="{ name: 'technologies' }"
             ><svg
               width="24"
@@ -273,7 +272,8 @@
                 stroke-width="1.5"
               />
             </svg>
-            Technologies</router-link>
+            Technologies</router-link
+          >
         </div>
 
         <div class="footer-links">

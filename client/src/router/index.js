@@ -6,6 +6,7 @@ import About from "../views/About/About.vue"
 import Error from "../views/Error/Error.vue";
 import Changelog from "../views/Changelog/Changelog.vue";
 import Technologies from "../views/Technologies/Technologies.vue";
+import ContactUs from "../views/Contact/ContactUs.vue";
 
 const routes = [
   {
@@ -32,6 +33,11 @@ const routes = [
     path: "/about",
     name: "about",
     component: About,
+  },
+  {
+    path: "/contact",
+    name: "contact",
+    component: ContactUs,
   },
   {
     path: "/404",

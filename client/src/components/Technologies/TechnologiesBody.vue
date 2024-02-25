@@ -20,6 +20,7 @@ export default {
         "Vue.js",
         "Swiper.js",
         "Vue router",
+        "Formspree",
         "SCSS"
       ],
       titleDeploy: "Deploy Technologies",
