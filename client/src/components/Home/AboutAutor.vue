@@ -50,10 +50,12 @@ export default {
             <line y1="1.5" x2="55" y2="1.5" stroke="#FFCA42" stroke-width="3" />
           </svg>
           <Paragraph :text="this.authorText" />
-          <ButtonBig
-            :buttonText="this.aboutButton"
-            :style="this.aboutButtonColor"
-          />
+          <router-link :to="{ name: 'about' }" class="option-button">
+            <ButtonBig
+              :buttonText="this.aboutButton"
+              :style="this.aboutButtonColor"
+            />
+          </router-link>
         </div>
       </div>
     </div>

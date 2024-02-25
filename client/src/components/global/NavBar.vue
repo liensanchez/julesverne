@@ -57,13 +57,15 @@ export default {
       <router-link :to="{ name: 'home' }" class="option-button"
         >Home</router-link
       >
-      <button class="option-button">Licenses</button>
-      <button class="option-button">Changelog</button>
+      <router-link :to="{ name: 'technologies' }" class="option-button">Technologies</router-link>
+      <router-link :to="{ name: 'changelog' }" class="option-button">Changelog</router-link>
       <router-link :to="{ name: 'styles-guide' }" class="option-button"
         >Styles-guide</router-link
       >
-      <button class="option-button">About</button>
-      <button class="option-button">Contact</button>
+      <router-link :to="{ name: 'about' }" class="option-button"
+        >About</router-link
+      >
+      <!-- <button class="option-button">Contact</button> -->
       <router-link :to="{ name: 'download' }" class="option-button">
         <ButtonSmall :buttonText="'Download Books'" :style="style" />
       </router-link>
@@ -177,14 +179,16 @@ export default {
             </span>
           </button>
           <div class="dropdown-buttons" :class="{ visible: menuDropdown }">
-            <button class="option-button">Licenses</button>
-            <button class="option-button">Changelog</button>
+            <router-link :to="{ name: 'technologies' }" class="option-button">Technologies</router-link>
+            <router-link :to="{ name: 'changelog' }" class="option-button">Changelog</router-link>
             <router-link :to="{ name: 'styles-guide' }" class="option-button"
               >Styles</router-link
             >
           </div>
         </div>
-        <button class="option-button">About</button>
+        <router-link :to="{ name: 'about' }" class="option-button"
+          >About</router-link
+        >
         <button class="option-button">Contact</button>
         <router-link :to="{ name: 'download' }" class="option-button">
           <ButtonSmall :buttonText="'Download Books'" :style="style" />
