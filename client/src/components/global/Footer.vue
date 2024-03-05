@@ -303,7 +303,7 @@
         </div>
         <p>
           Designed by <span>Victorflow</span> - Codecrafted by
-          <span>Lien Sanchez</span> - <span>PurpleDice</span>
+          <span>Lien Sanchez</span>
         </p>
       </div>
     </div>
