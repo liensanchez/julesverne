@@ -1,100 +1,102 @@
 <script>
 import ButtonSmall from "./ButtonSmall.vue";
 export default {
-  data() {
-    return {
-      style: {
-        borderColor: "#FFCA42",
-        backgroundColor: "#FFCA42",
-      },
-      menuDropdown: false,
-      menuMobile: false,
-    };
-  },
-  components: {
-    ButtonSmall,
-  },
-  methods: {
-    toggleMenu() {
-      this.menuDropdown = !this.menuDropdown;
+    data() {
+        return {
+            style: {
+                borderColor: "#FFCA42",
+                backgroundColor: "#FFCA42",
+            },
+            menuDropdown: false,
+            menuMobile: false,
+        };
     },
-    toggleMobile() {
-      this.menuMobile = !this.menuMobile;
+    components: {
+        ButtonSmall,
     },
-  },
+    methods: {
+        toggleMenu() {
+            this.menuDropdown = !this.menuDropdown;
+        },
+        toggleMobile() {
+            this.menuMobile = !this.menuMobile;
+        },
+    },
 };
 </script>
 
 <template>
-  <div class="navbar-container">
-    <div class="mobile-menu" v-if="this.menuMobile">
-      <div class="close-container">
-        <button @click="toggleMobile" class="close-burger">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g
-              id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></g>
-            <g id="SVGRepo_iconCarrier">
-              <path
-                d="M4 4L20 20M20 4L4 20"
-                stroke="#000000"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </g>
-          </svg>
-        </button>
-      </div>
+    <div class="navbar-container">
+        <div class="mobile-menu" v-if="this.menuMobile">
+            <div class="close-container">
+                <button @click="toggleMobile" class="close-burger">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                            id="SVGRepo_tracerCarrier"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M4 4L20 20M20 4L4 20"
+                                stroke="#000000"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            ></path>
+                        </g>
+                    </svg>
+                </button>
+            </div>
 
-      <router-link :to="{ name: 'home' }" class="option-button"
-        >Home</router-link
-      >
-      <router-link :to="{ name: 'technologies' }" class="option-button"
-        >Technologies</router-link
-      >
-      <router-link :to="{ name: 'changelog' }" class="option-button"
-        >Changelog</router-link
-      >
-      <router-link :to="{ name: 'styles-guide' }" class="option-button"
-        >Styles-guide</router-link
-      >
-      <router-link :to="{ name: 'about' }" class="option-button"
-        >About</router-link
-      >
-      <router-link :to="{ name: 'contact' }" class="option-button">Contact</router-link>
-      <router-link :to="{ name: 'download' }" class="option-button">
-        <ButtonSmall :buttonText="'Download Books'" :style="style" />
-      </router-link>
-    </div>
+            <router-link :to="{ name: 'home' }" class="option-button"
+                >Home</router-link
+            >
+            <router-link :to="{ name: 'technologies' }" class="option-button"
+                >Technologies</router-link
+            >
+            <router-link :to="{ name: 'changelog' }" class="option-button"
+                >Changelog</router-link
+            >
+            <router-link :to="{ name: 'styles-guide' }" class="option-button"
+                >Styles-guide</router-link
+            >
+            <router-link :to="{ name: 'about' }" class="option-button"
+                >About</router-link
+            >
+            <router-link :to="{ name: 'contact' }" class="option-button"
+                >Contact</router-link
+            >
+            <router-link :to="{ name: 'download' }" class="option-button">
+                <ButtonSmall :buttonText="'Download Books'" :style="style" />
+            </router-link>
+        </div>
 
-    <div class="custom-container">
-      <div class="navbar-left">
-        <router-link :to="{ name: 'home' }" class="navbar-logo">
-          <svg
-            width="25"
-            height="29"
-            viewBox="0 0 25 29"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3.56348 22.9H24.5V0.5H3.5057C1.57228 0.506417 0.00635613 2.08725 0 4.03908V24.6646H0.00057783C0.00057783 24.6733 0 24.6821 0 24.6908C0 26.7558 1.60521 28.5 3.5057 28.5H24.5V26.6333H3.5057C2.63895 26.6333 1.84906 25.7076 1.84906 24.6908C1.84906 23.7202 2.63433 22.9 3.56348 22.9ZM5.54717 2.38592H11.0943V12.4671L8.29764 9.9885L5.54717 12.4525V2.38592ZM1.84906 4.05367C1.84617 3.12617 2.58695 2.37192 3.5057 2.36667H3.69811H5.54717H3.69811V14.9667H5.52637L8.30458 12.4782L11.1117 14.9667H12.9434V2.36667H22.6509V21.0333H5.55179H3.70274H3.56348C2.96196 21.0333 2.37141 21.192 1.84963 21.493V4.05367H1.84906Z"
-              fill="#FFCA42"
-            />
-          </svg>
+        <div class="custom-container">
+            <div class="navbar-left">
+                <router-link :to="{ name: 'home' }" class="navbar-logo">
+                    <svg
+                        width="25"
+                        height="29"
+                        viewBox="0 0 25 29"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M3.56348 22.9H24.5V0.5H3.5057C1.57228 0.506417 0.00635613 2.08725 0 4.03908V24.6646H0.00057783C0.00057783 24.6733 0 24.6821 0 24.6908C0 26.7558 1.60521 28.5 3.5057 28.5H24.5V26.6333H3.5057C2.63895 26.6333 1.84906 25.7076 1.84906 24.6908C1.84906 23.7202 2.63433 22.9 3.56348 22.9ZM5.54717 2.38592H11.0943V12.4671L8.29764 9.9885L5.54717 12.4525V2.38592ZM1.84906 4.05367C1.84617 3.12617 2.58695 2.37192 3.5057 2.36667H3.69811H5.54717H3.69811V14.9667H5.52637L8.30458 12.4782L11.1117 14.9667H12.9434V2.36667H22.6509V21.0333H5.55179H3.70274H3.56348C2.96196 21.0333 2.37141 21.192 1.84963 21.493V4.05367H1.84906Z"
+                            fill="#FFCA42"
+                        />
+                    </svg>
 
-          <h1 class="navbar-title">Jules Verne</h1>
-        </router-link>
+                    <h1 class="navbar-title">Jules Verne</h1>
+                </router-link>
 
-        <!--         <div class="navbar-social">
+                <!--         <div class="navbar-social">
           <button class="social-button">
             <svg
               width="10"
@@ -135,274 +137,305 @@ export default {
             </svg>
           </button>
         </div> -->
-      </div>
+            </div>
 
-      <button class="option-burger" @click="toggleMobile">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <path
-              d="M4 6H20M4 12H20M4 18H20"
-              stroke="#000000"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-          </g>
-        </svg>
-      </button>
+            <button class="option-burger" @click="toggleMobile">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M4 6H20M4 12H20M4 18H20"
+                            stroke="#000000"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        ></path>
+                    </g>
+                </svg>
+            </button>
 
-      <div class="navbar-options">
-        <router-link :to="{ name: 'home' }" class="option-button"
-          >Home</router-link
-        >
-        <div class="dropdown-option">
-          <button class="option-button" @click="toggleMenu">
-            Pages
-            <span>
-              <svg
-                width="17"
-                height="16"
-                viewBox="0 0 17 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4.25 6L8.25 10L12.25 6"
-                  stroke="white"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </span>
-          </button>
-          <div class="dropdown-buttons" :class="{ visible: menuDropdown }">
-            <router-link :to="{ name: 'technologies' }" class="option-button"
-              >Technologies</router-link
-            >
-            <router-link :to="{ name: 'changelog' }" class="option-button"
-              >Changelog</router-link
-            >
-            <router-link :to="{ name: 'styles-guide' }" class="option-button"
-              >Styles</router-link
-            >
-          </div>
+            <div class="navbar-options">
+                <div class="navbar-links">
+                    <router-link :to="{ name: 'home' }" class="option-button"
+                        >Home</router-link
+                    >
+                    <div class="dropdown-option">
+                        <button class="option-button" @click="toggleMenu">
+                            Pages
+                            <span>
+                                <svg
+                                    width="17"
+                                    height="16"
+                                    viewBox="0 0 17 16"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M4.25 6L8.25 10L12.25 6"
+                                        stroke="white"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </span>
+                        </button>
+                        <div
+                            class="dropdown-buttons"
+                            :class="{ 'open-dropdown': menuDropdown }"
+                        >
+                            <router-link
+                                :to="{ name: 'technologies' }"
+                                class="option-button"
+                                >Technologies</router-link
+                            >
+                            <router-link
+                                :to="{ name: 'changelog' }"
+                                class="option-button"
+                                >Changelog</router-link
+                            >
+                            <router-link
+                                :to="{ name: 'styles-guide' }"
+                                class="option-button"
+                                >Styles</router-link
+                            >
+                        </div>
+                    </div>
+                    <router-link :to="{ name: 'about' }" class="option-button"
+                        >About</router-link
+                    >
+                    <router-link :to="{ name: 'contact' }" class="option-button"
+                        >Contact</router-link
+                    >
+                </div>
+
+                <router-link :to="{ name: 'download' }" class="option-button">
+                    <ButtonSmall
+                        :buttonText="'Download Books'"
+                        :style="style"
+                    />
+                </router-link>
+            </div>
         </div>
-        <router-link :to="{ name: 'about' }" class="option-button"
-          >About</router-link
-        >
-        <router-link :to="{ name: 'contact' }" class="option-button">Contact</router-link>
-        <router-link :to="{ name: 'download' }" class="option-button">
-          <ButtonSmall :buttonText="'Download Books'" :style="style" />
-        </router-link>
-      </div>
     </div>
-  </div>
 </template>
 
 <style lang="scss">
 .navbar-container {
-  padding: 35px 0;
-  background-color: #1b3764;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-
-  .mobile-menu {
-    display: none;
-  }
-
-  .custom-container {
-    display: flex;
-    justify-content: space-between;
-
-    .navbar-left {
-      width: 350px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      .navbar-logo {
-        text-decoration: none;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-
-        .navbar-title {
-          font-family: "Inter", sans-serif;
-          font-size: 28px;
-          color: #ffffff;
-          font-weight: 700;
-        }
-      }
-
-      .navbar-social {
-        display: flex;
-        gap: 10px;
-
-        .social-button {
-          cursor: pointer;
-          width: 45px;
-          height: 45px;
-          background: #ffffff;
-          border: none;
-          transition: fill 0.3s ease;
-
-          svg {
-            fill: #1b3764;
-            transition: fill 0.3s ease;
-          }
-
-          &:hover {
-            border: solid 1px #ffca42;
-            background: #1b3764;
-
-            svg {
-              fill: #ffffff;
-            }
-          }
-        }
-      }
-    }
-
-    .option-burger {
-      display: none;
-    }
-
-    .navbar-options {
-      display: flex;
-      gap: 20px;
-      height: 50px;
-
-      .option-button {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        cursor: pointer;
-        font-family: "Inter", sans-serif;
-        font-size: 17px;
-        color: #ffffff;
-        font-weight: 500;
-        text-decoration: none;
-        border: none;
-        background: none;
-        background-color: transparent;
-
-        &:hover {
-          text-decoration: underline;
-        }
-
-        span {
-          display: flex;
-          align-items: center;
-        }
-      }
-
-      .dropdown-option {
-        width: 70px;
-        display: flex;
-        align-content: center;
-        position: relative;
-        z-index: 2;
-
-        .dropdown-buttons {
-          margin-left: -75px;
-          margin-top: 50px;
-          display: flex;
-          flex-direction: column;
-          opacity: 0;
-          transition: opacity 0.3s ease;
-
-          .option-button {
-            text-decoration: none;
-            background: #1b3764;
-            padding: 5px;
-          }
-
-          &.visible {
-            opacity: 1;
-          }
-        }
-      }
-    }
-  }
-
-  @media (max-width: 1200px) {
     padding: 35px 0;
+    background-color: #1b3764;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
     .mobile-menu {
-      margin-top: -35px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      position: fixed;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.7);
-      width: 100%;
-      height: 100%;
-
-      .close-container {
-        width: 90%;
-        display: flex;
-        justify-content: flex-end;
-        padding: 35px;
-
-        .close-burger {
-          width: 50px;
-          background: #ffca42;
-          border: none;
-        }
-      }
-
-      .option-button {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        cursor: pointer;
-        font-family: "Inter", sans-serif;
-        font-size: 25px;
-        color: #ffffff;
-        font-weight: 500;
-        border: none;
-        background: none;
-        background-color: transparent;
-
-        &:hover {
-          text-decoration: underline;
-        }
-
-        span {
-          display: flex;
-          align-items: center;
-        }
-      }
+        display: none;
     }
 
     .custom-container {
-      .navbar-left {
-        .navbar-social {
-          display: none;
-        }
-      }
-
-      .option-burger {
         display: flex;
-        justify-content: center;
-        width: 50px;
-        background: #ffca42;
-        border: none;
-      }
+        justify-content: space-between;
+        align-items: center;
 
-      .navbar-options {
-        display: none;
-      }
+        .navbar-left {
+            width: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .navbar-logo {
+                text-decoration: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                .navbar-title {
+                    font-family: "Inter", sans-serif;
+                    font-size: 28px;
+                    color: #ffffff;
+                    font-weight: 700;
+                }
+            }
+
+            .navbar-social {
+                display: flex;
+                gap: 10px;
+
+                .social-button {
+                    cursor: pointer;
+                    width: 45px;
+                    height: 45px;
+                    background: #ffffff;
+                    border: none;
+                    transition: fill 0.3s ease;
+
+                    svg {
+                        fill: #1b3764;
+                        transition: fill 0.3s ease;
+                    }
+
+                    &:hover {
+                        border: solid 1px #ffca42;
+                        background: #1b3764;
+
+                        svg {
+                            fill: #ffffff;
+                        }
+                    }
+                }
+            }
+        }
+
+        .option-burger {
+            display: none;
+        }
+
+        .navbar-options {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            height: 50px;
+
+            .navbar-links {
+              height: 25px;
+              display: flex;
+              align-items: start;
+              gap: 25px;
+            }
+
+            .option-button {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                cursor: pointer;
+                font-family: "Inter", sans-serif;
+                font-size: 17px;
+                color: #ffffff;
+                font-weight: 500;
+                text-decoration: none;
+                border: none;
+                background: none;
+                background-color: transparent;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                span {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+            .dropdown-option {
+                width: 70px;
+                display: flex;
+                align-content: center;
+                flex-direction: column;
+                z-index: 2;
+
+                .dropdown-buttons {
+                    max-height: 0;
+                    width: 200px;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    transition: max-height 0.3s ease;
+
+                    .option-button {
+                        text-decoration: none;
+                        background: #1b3764;
+                        padding: 5px;
+                    }
+
+                    &.open-dropdown {
+                        height: auto;
+                        max-height: 100px;
+                    }
+                }
+            }
+        }
     }
-  }
+
+    @media (max-width: 1200px) {
+        padding: 35px 0;
+        .mobile-menu {
+            margin-top: -35px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: fixed;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            height: 100%;
+
+            .close-container {
+                width: 90%;
+                display: flex;
+                justify-content: flex-end;
+                padding: 35px;
+
+                .close-burger {
+                    width: 50px;
+                    background: #ffca42;
+                    border: none;
+                }
+            }
+
+            .option-button {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                cursor: pointer;
+                font-family: "Inter", sans-serif;
+                font-size: 25px;
+                color: #ffffff;
+                font-weight: 500;
+                border: none;
+                background: none;
+                background-color: transparent;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                span {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+
+        .custom-container {
+            .navbar-left {
+                .navbar-social {
+                    display: none;
+                }
+            }
+
+            .option-burger {
+                display: flex;
+                justify-content: center;
+                width: 50px;
+                background: #ffca42;
+                border: none;
+            }
+
+            .navbar-options {
+                display: none;
+            }
+        }
+    }
 }
 </style>
